@@ -1,5 +1,6 @@
 import { Outlet, NavLink } from 'react-router'
 import { MessageSquare, BookOpen, History, BarChart3, Settings, Home } from 'lucide-react'
+import { Analytics } from "@vercel/analytics/next"
 
 const navItems = [
   { to: '/dashboard', icon: Home, label: 'Dashboard' },
@@ -46,6 +47,7 @@ export function MainLayout() {
       {/* Main content */}
       <main className="flex-1 overflow-y-auto">
         <Outlet />
+        <Analytics />
       </main>
     </div>
   )
