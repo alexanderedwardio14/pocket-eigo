@@ -1,4 +1,5 @@
 import { createClient } from '@supabase/supabase-js'
+import type { VocabularyWord } from '../types'
 
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL
 const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY
@@ -77,7 +78,7 @@ export async function fetchVocabulary() {
     .order('created_at', { ascending: false })
 
   if (error) throw error
-  return data
+  return (data ?? []) as VocabularyWord[]
 }
 
 export async function deleteVocabularyWord(id: string) {
