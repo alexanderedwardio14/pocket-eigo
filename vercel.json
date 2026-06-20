@@ -26,10 +26,5 @@
         { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
       ]
     }
-  ],
-  "build": {
-    "env": {
-      "VERCEL_ANALYTICS_SDK_ENABLED": "false"
-    }
-  }
+  ]
 }
